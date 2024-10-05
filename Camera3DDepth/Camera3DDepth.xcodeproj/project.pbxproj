@@ -11,32 +11,12 @@
 		2E6B69942CA787E400AC5151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E6B698F2CA787E400AC5151 /* Assets.xcassets */; };
 		2E6B69952CA787E400AC5151 /* Camera3DDepthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6B69902CA787E400AC5151 /* Camera3DDepthApp.swift */; };
 		2E6B69962CA787E400AC5151 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6B69912CA787E400AC5151 /* ContentView.swift */; };
-		2E6B69992CA7880400AC5151 /* Camera3DDepthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6B69972CA7880400AC5151 /* Camera3DDepthTests.swift */; };
-		2E6B699D2CA7880700AC5151 /* Camera3DDepthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6B699A2CA7880700AC5151 /* Camera3DDepthUITests.swift */; };
-		2E6B699E2CA7880700AC5151 /* Camera3DDepthUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6B699B2CA7880700AC5151 /* Camera3DDepthUITestsLaunchTests.swift */; };
 		2EC936BA2CB07A8E00817DAA /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC936B92CB07A8E00817DAA /* CameraView.swift */; };
 		2EC936BE2CB0A78600817DAA /* ImageDepthServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC936BD2CB0A78600817DAA /* ImageDepthServer.swift */; };
 		2EC936C12CB0AC4F00817DAA /* Grayscale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC936C02CB0AC4F00817DAA /* Grayscale.swift */; };
 		2EC936C32CB0AF1B00817DAA /* JetColormap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC936C22CB0AF1B00817DAA /* JetColormap.swift */; };
 		2ED764322CA7DF41008C89BA /* PeerTalk in Frameworks */ = {isa = PBXBuildFile; productRef = 2ED764312CA7DF41008C89BA /* PeerTalk */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2E6B69712CA787A400AC5151 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2E6B69582CA787A200AC5151 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2E6B695F2CA787A200AC5151;
-			remoteInfo = Camera3DDepth;
-		};
-		2E6B697B2CA787A400AC5151 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2E6B69582CA787A200AC5151 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2E6B695F2CA787A200AC5151;
-			remoteInfo = Camera3DDepth;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		2ED403F32CA78AA3001CF7AB /* Embed Frameworks */ = {
@@ -53,15 +33,10 @@
 
 /* Begin PBXFileReference section */
 		2E6B69602CA787A200AC5151 /* Camera3DDepth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Camera3DDepth.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E6B69702CA787A400AC5151 /* Camera3DDepthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Camera3DDepthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E6B697A2CA787A400AC5151 /* Camera3DDepthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Camera3DDepthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6B698D2CA787E400AC5151 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E6B698F2CA787E400AC5151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E6B69902CA787E400AC5151 /* Camera3DDepthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera3DDepthApp.swift; sourceTree = "<group>"; };
 		2E6B69912CA787E400AC5151 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2E6B69972CA7880400AC5151 /* Camera3DDepthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera3DDepthTests.swift; sourceTree = "<group>"; };
-		2E6B699A2CA7880700AC5151 /* Camera3DDepthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera3DDepthUITests.swift; sourceTree = "<group>"; };
-		2E6B699B2CA7880700AC5151 /* Camera3DDepthUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera3DDepthUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2EC936B92CB07A8E00817DAA /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		2EC936BD2CB0A78600817DAA /* ImageDepthServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDepthServer.swift; sourceTree = "<group>"; };
 		2EC936C02CB0AC4F00817DAA /* Grayscale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grayscale.swift; sourceTree = "<group>"; };
@@ -77,20 +52,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E6B696D2CA787A400AC5151 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2E6B69772CA787A400AC5151 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,8 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				2E6B69922CA787E400AC5151 /* Camera3DDepth */,
-				2E6B69982CA7880400AC5151 /* Camera3DDepthTests */,
-				2E6B699C2CA7880700AC5151 /* Camera3DDepthUITests */,
 				2E6B69612CA787A200AC5151 /* Products */,
 				AFAFD2859E861D145728669E /* Frameworks */,
 			);
@@ -109,8 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				2E6B69602CA787A200AC5151 /* Camera3DDepth.app */,
-				2E6B69702CA787A400AC5151 /* Camera3DDepthTests.xctest */,
-				2E6B697A2CA787A400AC5151 /* Camera3DDepthUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,23 +91,6 @@
 				2E6B69902CA787E400AC5151 /* Camera3DDepthApp.swift */,
 			);
 			path = Camera3DDepth;
-			sourceTree = "<group>";
-		};
-		2E6B69982CA7880400AC5151 /* Camera3DDepthTests */ = {
-			isa = PBXGroup;
-			children = (
-				2E6B69972CA7880400AC5151 /* Camera3DDepthTests.swift */,
-			);
-			path = Camera3DDepthTests;
-			sourceTree = "<group>";
-		};
-		2E6B699C2CA7880700AC5151 /* Camera3DDepthUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2E6B699A2CA7880700AC5151 /* Camera3DDepthUITests.swift */,
-				2E6B699B2CA7880700AC5151 /* Camera3DDepthUITestsLaunchTests.swift */,
-			);
-			path = Camera3DDepthUITests;
 			sourceTree = "<group>";
 		};
 		2EC936BB2CB0A6BA00817DAA /* Views */ = {
@@ -207,42 +147,6 @@
 			productReference = 2E6B69602CA787A200AC5151 /* Camera3DDepth.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2E6B696F2CA787A400AC5151 /* Camera3DDepthTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2E6B69872CA787A400AC5151 /* Build configuration list for PBXNativeTarget "Camera3DDepthTests" */;
-			buildPhases = (
-				2E6B696C2CA787A400AC5151 /* Sources */,
-				2E6B696D2CA787A400AC5151 /* Frameworks */,
-				2E6B696E2CA787A400AC5151 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2E6B69722CA787A400AC5151 /* PBXTargetDependency */,
-			);
-			name = Camera3DDepthTests;
-			productName = Camera3DDepthTests;
-			productReference = 2E6B69702CA787A400AC5151 /* Camera3DDepthTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2E6B69792CA787A400AC5151 /* Camera3DDepthUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2E6B698A2CA787A400AC5151 /* Build configuration list for PBXNativeTarget "Camera3DDepthUITests" */;
-			buildPhases = (
-				2E6B69762CA787A400AC5151 /* Sources */,
-				2E6B69772CA787A400AC5151 /* Frameworks */,
-				2E6B69782CA787A400AC5151 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2E6B697C2CA787A400AC5151 /* PBXTargetDependency */,
-			);
-			name = Camera3DDepthUITests;
-			productName = Camera3DDepthUITests;
-			productReference = 2E6B697A2CA787A400AC5151 /* Camera3DDepthUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -255,14 +159,6 @@
 				TargetAttributes = {
 					2E6B695F2CA787A200AC5151 = {
 						CreatedOnToolsVersion = 16.0;
-					};
-					2E6B696F2CA787A400AC5151 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 2E6B695F2CA787A200AC5151;
-					};
-					2E6B69792CA787A400AC5151 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 2E6B695F2CA787A200AC5151;
 					};
 				};
 			};
@@ -284,8 +180,6 @@
 			projectRoot = "";
 			targets = (
 				2E6B695F2CA787A200AC5151 /* Camera3DDepth */,
-				2E6B696F2CA787A400AC5151 /* Camera3DDepthTests */,
-				2E6B69792CA787A400AC5151 /* Camera3DDepthUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -297,20 +191,6 @@
 			files = (
 				2E6B69932CA787E400AC5151 /* Preview Assets.xcassets in Resources */,
 				2E6B69942CA787E400AC5151 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2E6B696E2CA787A400AC5151 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2E6B69782CA787A400AC5151 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,37 +210,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E6B696C2CA787A400AC5151 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2E6B69992CA7880400AC5151 /* Camera3DDepthTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2E6B69762CA787A400AC5151 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2E6B699D2CA7880700AC5151 /* Camera3DDepthUITests.swift in Sources */,
-				2E6B699E2CA7880700AC5151 /* Camera3DDepthUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2E6B69722CA787A400AC5151 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2E6B695F2CA787A200AC5151 /* Camera3DDepth */;
-			targetProxy = 2E6B69712CA787A400AC5151 /* PBXContainerItemProxy */;
-		};
-		2E6B697C2CA787A400AC5151 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2E6B695F2CA787A200AC5151 /* Camera3DDepth */;
-			targetProxy = 2E6B697B2CA787A400AC5151 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2E6B69822CA787A400AC5151 /* Debug */ = {
@@ -554,78 +404,6 @@
 			};
 			name = Release;
 		};
-		2E6B69882CA787A400AC5151 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PL76RFXTQ4;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ProcImg.Camera3DDepthTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Camera3DDepth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Camera3DDepth";
-			};
-			name = Debug;
-		};
-		2E6B69892CA787A400AC5151 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PL76RFXTQ4;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ProcImg.Camera3DDepthTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Camera3DDepth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Camera3DDepth";
-			};
-			name = Release;
-		};
-		2E6B698B2CA787A400AC5151 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PL76RFXTQ4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ProcImg.Camera3DDepthUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Camera3DDepth;
-			};
-			name = Debug;
-		};
-		2E6B698C2CA787A400AC5151 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PL76RFXTQ4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ProcImg.Camera3DDepthUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Camera3DDepth;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -643,24 +421,6 @@
 			buildConfigurations = (
 				2E6B69852CA787A400AC5151 /* Debug */,
 				2E6B69862CA787A400AC5151 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2E6B69872CA787A400AC5151 /* Build configuration list for PBXNativeTarget "Camera3DDepthTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2E6B69882CA787A400AC5151 /* Debug */,
-				2E6B69892CA787A400AC5151 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2E6B698A2CA787A400AC5151 /* Build configuration list for PBXNativeTarget "Camera3DDepthUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2E6B698B2CA787A400AC5151 /* Debug */,
-				2E6B698C2CA787A400AC5151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
