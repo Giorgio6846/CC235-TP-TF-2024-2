@@ -13,8 +13,11 @@ def face_data():
 
     depth_file = request.files["depthImage"]
     depth_image = Image.open(io.BytesIO(depth_file.read()))
+
+    print(depth_image.mode)
+
     depth_image = depth_image.rotate(270)
-    depth_image.save(os.path.join(os.path.dirname(__file__), "data", "DepthImage.jpg"))
+    depth_image.save(os.path.join(os.path.dirname(__file__), "data", "DepthImage.png"))
 
     colorImage_file = request.files["faceImage"]
     colorImage = Image.open(io.BytesIO(colorImage_file.read()))
