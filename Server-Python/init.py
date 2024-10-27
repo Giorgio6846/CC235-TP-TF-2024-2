@@ -3,8 +3,17 @@ import json
 from PIL import Image
 import io
 import os
+import cv2
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
+
+limiter = Limiter(
+    get_remote_address, 
+    app=app, 
+    default_limits=["5/second"]
+)
 
 @app.route("/face-depth-data", methods=["POST"])
 def face_data():
@@ -27,4 +36,4 @@ def face_data():
     return jsonify({"Message": "Datos recibidos con exito"})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5050, debug=True)
+    app.run(host="0.0.0.0", port=5050)
