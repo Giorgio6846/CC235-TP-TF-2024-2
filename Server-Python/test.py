@@ -1,23 +1,34 @@
 import cv2
-import os 
-impo
-depthFile = 
+import os
+import open3d as o3d
+import matplotlib.pyplot as plt
+import numpy as np
 
-def showIMG():
-    depthIMG = cv2.imread(
-        os.path.join(os.path.dirname(__file__), "data", "DepthImage.png"),
-        cv2.IMREAD_GRAYSCALE,
-    )
-    cv2.imshow("image", depthIMG)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+colorFile = "./data/FaceImage.jpg"
+depthFile = "./data/DepthImage.png"
 
-print("Read Redwood dataset")
-color_raw = o3d.io.read_image("../../test_data/RGBD/color/00000.jpg")
-depth_raw = o3d.io.read_image("../../test_data/RGBD/depth/00000.png")
-rgbd_image = o3d.geometry.RGBDImage.create_from_color_and_depth(
-    color_raw, depth_raw)
+print("Load Image")
+
+colorArray = cv2.imread(colorFile)
+depthArray = cv2.imread(depthFile)
+
+depthArray = np.array(depthArray).astype('uint16')
+
+colour = o3d.geometry.Image(np.array(colorArray))
+depth = o3d.geometry.Image(np.array(depthArray))
+
+print(depthArray.dtype, colorArray.dtype)
+
+print("Depth Array", np.min(depthArray), np.max(depthArray))
+print("Image Array", np.min(colorArray), np.max(colorArray))
+
+rgbd_image = o3d.geometry.RGBDImage.create_from_color_and_depth(colour, depth)
 print(rgbd_image)
 
-
-showIMG()
+plt.subplot(1, 2, 1)
+plt.title("Camera grayscale image")
+plt.imshow(rgbd_image.color)
+plt.subplot(1, 2, 2)
+plt.title("Camera depth image")
+plt.imshow(rgbd_image.depth)
+plt.show()

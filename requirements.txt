@@ -2,3 +2,5 @@ flask
 Pillow
 matplotlib
 scikit-image
+Flask-Limiter
+open3d
