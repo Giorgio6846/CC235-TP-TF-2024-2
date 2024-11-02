@@ -1,0 +1,3 @@
+[submodule "DepthDetection"]
+	path = DepthDetection
+	url = https://github.com/Giorgio6846/DepthDetection
