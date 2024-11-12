@@ -1,6 +1,5 @@
-*/build
 */*.pyc
-/Server-Python/data
-*data
-/Study
+*Study
 *__pycache__
+NU_*
+/code/Server/data
