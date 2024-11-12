@@ -8,8 +8,21 @@
             "name": "Run Server",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/Server-Python/init.py",
+            "program": "${workspaceFolder}/Server/init.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Run GUI",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/GUI/init.py",
+            "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Run GUI and Server",
+            "configurations": ["Run Server", "Run GUI"]
         }
     ]
 }
