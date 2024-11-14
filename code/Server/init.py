@@ -1,15 +1,16 @@
-from flask import Flask, request, jsonify, session, Response
-import json
+from flask import Flask, request, jsonify, Response
 from PIL import Image
 import io
 import os
-import cv2
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from flask_session import Session
 from time import gmtime, strftime
 import pandas as pd
 import uuid
+from SiameseNetwork import ModelSM
+import tools
+from CM import FaceDepthVerification
+import numpy as np
 
 app = Flask(__name__)
 app.secret_key=b'app'
@@ -25,8 +26,13 @@ class Data:
     def __init__(self):
         self.labelDepth = ""
         self.labelFace = ""
+        
+        self.Model = ModelSM()
 
 sharedData = Data()
+sharedData.Model.load_weights()
+
+FaDeVe = FaceDepthVerification()
 
 @app.route("/face-depth-data", methods=["POST"])
 def cameraData():
@@ -161,6 +167,34 @@ def userCreation():
         os.path.join(os.path.dirname(__file__), "data", "data.csv"), index_col=False
     )
 
+    os.replace(
+        os.path.join(
+            os.path.dirname(__file__),
+            "data",
+            "tmp",
+            sharedData.labelDepth,
+        ),
+        os.path.join(
+            os.path.dirname(__file__),
+            "data",
+            sharedData.labelDepth,
+        ),
+    )
+
+    os.replace(
+        os.path.join(
+            os.path.dirname(__file__),
+            "data",
+            "tmp",
+            sharedData.labelFace,
+        ),
+        os.path.join(
+            os.path.dirname(__file__),
+            "data",
+            sharedData.labelFace,
+        ),
+    )
+
     if jsonRequest.get('username') in dataframe["Username"].tolist():
         print("Already in dataframe") 
         return Response({"Message": "Ya esta en dataframe"}, 400)
@@ -170,6 +204,9 @@ def userCreation():
         sharedData.labelDepth,
         f"{jsonRequest.get('username')}",
     ]
+
+    sharedData.labelFace = ""
+    sharedData.labelDepth = ""
 
     dataframe.to_csv(
         os.path.join(os.path.dirname(__file__), "data", "data.csv"), index=False
@@ -190,9 +227,49 @@ def userList():
 
     return Response(jsonData,200)
 
-@app.route("/face-verification", methods=["GET"])
+@app.route("/face-verification", methods=["POST"])
 def verifyUser():
-    pass
+    dataframe = pd.read_csv(
+        os.path.join(os.path.dirname(__file__), "data", "data.csv"), index_col=False
+    )
+
+    jsonRequest = request.json
+    print(jsonRequest.get("username"))
+
+    usernameSearch = jsonRequest.get("username")
+
+    data = dataframe[dataframe["Username"].str.contains(usernameSearch)]
+
+    facePath =   f"./data/{data["Face"].iloc[0]}"
+    depthPath =  f"./data/{data["Depth"].iloc[0]}"
+    face1Path =  f"./data/tmp/{sharedData.labelFace}"
+    depth1Path = f"./data/tmp/{sharedData.labelDepth}"
+
+    tools.saveFaces(facePath, depthPath, face1Path, depth1Path)
+
+    # Metodo Clasico
+    percentageCM = FaDeVe.verify(
+        facePath, depthPath, face1Path, depth1Path
+    )
+
+    # Metodo con DL
+    percentageDL = sharedData.Model.predict_similarity(
+        "./data/tmp/imgProc/F1.jpg",
+        "./data/tmp/imgProc/D1.png",
+        "./data/tmp/imgProc/F2.jpg",
+        "./data/tmp/imgProc/D2.png"
+    )
+
+    print(percentageCM)
+    print(type(percentageCM))
+
+    if type(percentageCM) != np.float64:
+        percentageCM = 0
+
+    print(percentageCM)
+    print(1-percentageDL)
+
+    return jsonify({"PercentageDL": float(1-percentageDL), "PercentageClassic": float(percentageCM)})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5050, debug=True)
