@@ -1,0 +1,3 @@
+Face Recognition from a Single Image per Person: A Survey
+
+https://www.lamda.nju.edu.cn/publication/pr06b.pdf

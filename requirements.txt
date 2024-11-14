@@ -6,4 +6,4 @@ Flask-Limiter
 open3d
 plyfile
 pyside6
-Products.MIMETools
+torch

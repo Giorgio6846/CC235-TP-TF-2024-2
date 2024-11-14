@@ -3,3 +3,4 @@
 *__pycache__
 NU_*
 /code/Server/data
+data/siamese_network.weights.h5
