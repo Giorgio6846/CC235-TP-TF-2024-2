@@ -9,7 +9,7 @@ from PySide6.QtWidgets import (
     QPushButton,
 )
 from enum import Enum
-from Screens import InitScreen, UserCreation
+from Screens import InitScreen, UserCreation, UserVerification
 import requests
 
 Options = Enum("Options", ["MainScreen", "ExitProgram", "UserCreation", "UserVerification"])
@@ -21,6 +21,9 @@ class Data():
     def __init__(self):
         self.IPAddress = ""
         self.username = ""
+        self.userList = ""
+        
+        self.percentageVerifications = ""
 
     def setIPAddress(self, IP):
         self.IPAddress = IP
@@ -78,11 +81,36 @@ class NetworkController():
         else:
             return False
 
+    def getUsers(self, IP):
+        url = f"http://{IP if IP else '10.0.1.12:5050'}/face-verification"
+        response = requests.get(
+            url
+        )
+
+        print(response.json())
+
+        return response.json()
+
+    def verifyUser(self,IP,username):
+        if username == "":
+            return -1
+
+        url = f"http://{IP if IP else '10.0.1.12:5050'}/face-verification"
+        response = requests.post(
+            url,
+            json={"username": f"{username}"},
+            headers={"Content-Type": "application/json"},
+        )
+
+        print(response.json())
+
+        return response.json()
+
 class Controller(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-        
+
         self.dataApp = Data()
         self.networkController = NetworkController()
 
@@ -91,25 +119,32 @@ class Controller(QWidget):
 
         self.buttonStart = QPushButton(text="Menu")
         self.buttonUserCreation = QPushButton(text="Creacion de Usuario")
-        self.buttonUserView = QPushButton(text="Verificacion de Usaurio")
+        self.buttonUserVerif = QPushButton(text="Verificacion de Usaurio")
         self.buttonExit = QPushButton(text="Salir")
 
         self.buttonStart.clicked.connect(lambda: self.setIndex(Options.MainScreen))
         self.buttonUserCreation.clicked.connect(lambda: self.setIndex(Options.UserCreation))
-        # self.buttonResult.clicked.connect(lambda: self.setIndex(Options.ResultMatrix))
+        self.buttonUserVerif.clicked.connect(
+            lambda: self.setIndex(Options.UserVerification)
+        )
         self.buttonExit.clicked.connect(lambda: self.setIndex(Options.ExitProgram))
 
         self.LayoutButton.addWidget(self.buttonStart)
         self.LayoutButton.addWidget(self.buttonUserCreation)
+        self.LayoutButton.addWidget(self.buttonUserVerif)
         self.LayoutButton.addWidget(self.buttonExit)
 
         self.layout = QStackedLayout()
 
         self.mainScreen = InitScreen.InitScreen(self.dataApp, self.networkController)
         self.userCreation = UserCreation.UserCreation(self.dataApp, self.networkController)
+        self.userVerification = UserVerification.UserVerification(
+            self.dataApp, self.networkController
+        )
 
         self.layout.addWidget(self.mainScreen)
         self.layout.addWidget(self.userCreation)
+        self.layout.addWidget(self.userVerification)
 
         self.layout.setCurrentIndex(self.index)
 
